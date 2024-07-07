@@ -1,0 +1,31 @@
+.dashboard {
+    display: flex;
+    gap: var(--wide-pd);
+    border-radius: var(--main-rd);
+    height: 50%;
+    background-color: var(--back-nav-cr);
+    padding: var(--wide-pd);
+    /* margin: 0 auto; */
+}
+
+.img {
+    min-width: 30%;
+    min-height: 100%;
+
+}
+
+.card {
+    border-radius: var(--main-rd);
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 350px;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+}
+
+.title>span {
+    font-size: var(--title-size);
+}

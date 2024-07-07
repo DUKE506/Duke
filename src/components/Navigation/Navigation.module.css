@@ -1,0 +1,27 @@
+.nav {
+    position: fixed;
+    width: 30%;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 1rem;
+    border-radius: 50px;
+
+    background-color: var(--back-nav-cr);
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--nav-pd);
+
+}
+
+.nav li {
+    font-size: var(--normal-size);
+}
+
+.nav li:hover {
+    transform: scale(1.2);
+}
