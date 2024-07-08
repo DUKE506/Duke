@@ -5,6 +5,7 @@ const DevCard = () => {
     return (
         <figure>
             <Image alt='' src={MyImg}/>
+            
         </figure>
     )
 }
