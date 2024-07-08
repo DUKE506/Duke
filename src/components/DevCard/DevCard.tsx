@@ -1,12 +1,11 @@
-
+import Image from 'next/image'
+import MyImg from '../../../public/images/Duke.png'
 
 const DevCard = () => {
     return (
-        <div >
-            <div>
-                Image Area
-            </div>
-        </div>
+        <figure>
+            <Image alt='' src={MyImg}/>
+        </figure>
     )
 }
 
