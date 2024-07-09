@@ -17,9 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
-        <Navigation />
-        {children}
+      <body className="wrapper">
+        <div className="header">
+          <div className="inner">
+            <Navigation />
+          </div>
+        </div>
+        <section id="content">
+          <div className="inner">
+            {children}
+          </div>
+        </section>
       </body>
     </html>
   );

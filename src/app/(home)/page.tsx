@@ -1,11 +1,11 @@
-import Dashboard from "./components/Dashboard";
+import styles from './page.module.css'
 
 
 
 export default function HomePage() {
     return (
-        <div>
-            <Dashboard />
+        <div className={styles.home}>
+            asdsadas
         </div>
     )
 }

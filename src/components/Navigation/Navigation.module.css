@@ -1,14 +1,26 @@
-.nav {
-    position: fixed;
-    width: 30%;
-    top: 2%;
-    left: 50%;
-    transform: translateX(-50%);
 
+@keyframes XAppear{
+    from {
+          opacity: 0;
+          transform: translateX(-5%);
+      }
+  
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+.nav {
+    width: 30%;
+    animation: XAppear 0.7s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
     padding: 1rem;
     border-radius: 50px;
 
     background-color: var(--back-nav-cr);
+    /* box-shadow: 0 0 15px -5px var(--back-nav-cr); */
 }
 
 .nav ul {

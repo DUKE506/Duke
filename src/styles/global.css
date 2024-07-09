@@ -1,28 +1,40 @@
+
+
 :root {
+
+  
+
   /*
   색상
   */
-  --back-main-cr: #000000;
+  --color-main1: #212529;
+  --color-main2: #343a40;
+  --color-main3: #495057;
+  --color-main4: #868e96;
+  --color-main5: #adb5db;
+  --color-main6: #ced4da;
+
   --back-sub-cr: #ffffff;
-  --back-nav-cr: #2e2e2e;
+  --back-nav-cr: #343a40;
+  
 
   /*
   패딩
   */
-  --main-pd: 1rem;
-  --wide-pd: 2rem;
-  --half-pd: 0.5rem;
-  --three-q-pd: 0.75;
-  --one-q-pd: 0.25rem;
+  --pad-wide: 2rem;
+  --pad-main: 1rem;
+  --pad-three: 0.75;
+  --pad-half: 0.5rem;
+  --pad-one: 0.25rem;
 
   --nav-pd: 1.5rem;
 
   /*
   폰트 사이즈
   */
-  --default-size: 1rem;
-  --title-size: 1.5rem;
-  --normal-size: 0.8rem;
+  --size-default: 1rem;
+  --size-title: 1.5rem;
+  --size-normal: 0.8rem;
 
   /*
   border-radius
@@ -167,9 +179,11 @@ table {
   border-spacing: 0;
 }
 
+section {
+  display: block;
+}
+
 body {
-  margin: 0 10%;
-  padding-top: 150px;
   font-family:
     system-ui,
     -apple-system,
@@ -182,10 +196,30 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  background-color: var(--back-main-cr);
+  background-color: var(--color-main1);
   color: #ffffff;
   font-size: 18px;
 }
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header{
+  margin-top: var(--pad-main);
+}
+
+#content{
+  flex : 1;
+  margin-top: var(--pad-main);
+}
+
+.inner{
+  inline-size: min(100% - 35px* 2, 1820px);
+  margin-inline: auto;
+}
+
 
 a {
   color: inherit;
