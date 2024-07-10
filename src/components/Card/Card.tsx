@@ -2,17 +2,22 @@ import Image from 'next/image'
 import MyImg from '../../../public/images/Duke.png'
 import styles from './Card.module.css'
 
-const DevCard = ({Name, Created} : {Name : string, Created : string}) => {
+const Card = ({Name, Created, Author} : {Name : string, Created : string, Author : string}) => {
     return (
         <div className={styles.card}>
             <figure className={styles.figure}>
-                <Image alt='' src={MyImg} layout='responsive'/>
+                <Image
+                    className={styles.img} 
+                    alt='' 
+                    src={MyImg} 
+                    layout='responsive'
+                    />
             </figure>
             <div className={styles.info}>
-                <span>
+                <span className={styles.card_title}>
                     {Name}
                 </span>
-                <span>
+                <span className={styles.card_date}>
                     {Created}
                 </span>
             </div>
@@ -22,4 +27,4 @@ const DevCard = ({Name, Created} : {Name : string, Created : string}) => {
     )
 }
 
-export default DevCard;
+export default Card;

@@ -22,6 +22,7 @@
   패딩
   */
   --pad-wide: 2rem;
+  --pad-mw: 1.5rem;
   --pad-main: 1rem;
   --pad-three: 0.75;
   --pad-half: 0.5rem;
@@ -32,9 +33,13 @@
   /*
   폰트 사이즈
   */
-  --size-default: 1rem;
+  --size-xs : 0.8rem;
+  --size-s: 1rem; /*18px*/
+  --size-m : 1.125rem;
+  --size-l : 1.25rem;
+  --size-xl : 1.5rem; 
+  --size-2xl : 1.75rem;
   --size-title: 1.5rem;
-  --size-normal: 0.8rem;
 
   /*
   border-radius
