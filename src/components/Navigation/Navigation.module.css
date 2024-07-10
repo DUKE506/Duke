@@ -12,6 +12,7 @@
   }
 
 .nav {
+    position : fixed;
     width: 30%;
     animation: XAppear 0.7s;
     animation-fill-mode: forwards;
