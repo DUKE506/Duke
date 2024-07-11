@@ -11,10 +11,8 @@ const Card = ({Name, Created, Author} : {Name : string, Created : string, Author
                 <Image
                     className={styles.img} 
                     alt=''
-                    // width={350} 
-                    // height={350}
                     src={MyImg} 
-                    // layout='responsive'
+                    layout='responsive'
                     />
             </figure>
             <div className={styles.info}>

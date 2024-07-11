@@ -44,20 +44,23 @@ export default function HomePage() {
 
     return (
         <div className={styles.home}>
-            <div className={styles.grid}>
+            <ul className={styles.grid}>
                 {
                     CardList.map((card, idx)=> {
                         return(
-                            <Card 
-                                key={idx} 
-                                Name={card.Name} 
-                                Created={card.Created}
-                                Author={card.Author}
-                                />
+                            <li className={styles.li}>
+                                <Card 
+                                    key={idx} 
+                                    Name={card.Name} 
+                                    Created={card.Created}
+                                    Author={card.Author}
+                                    />
+                            </li>
+                            
                         )
                     })
                 }
-            </div>
+            </ul>
         </div>
     )
 }

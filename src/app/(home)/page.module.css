@@ -8,5 +8,6 @@
 .grid{
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
-    gap: var(--pad-wide);
+    gap: 30px var(--pad-wide);
 }
+
