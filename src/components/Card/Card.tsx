@@ -1,16 +1,20 @@
 import Image from 'next/image'
 import MyImg from '../../../public/images/Duke.png'
 import styles from './Card.module.css'
+import CardDetail from './Components/CardDetail'
 
 const Card = ({Name, Created, Author} : {Name : string, Created : string, Author : string}) => {
     return (
         <div className={styles.card}>
             <figure className={styles.figure}>
+                <CardDetail/>
                 <Image
                     className={styles.img} 
-                    alt='' 
+                    alt=''
+                    // width={350} 
+                    // height={350}
                     src={MyImg} 
-                    layout='responsive'
+                    // layout='responsive'
                     />
             </figure>
             <div className={styles.info}>
