@@ -1,9 +1,14 @@
 import styles from './CardDetail.module.css'
 
-const CardDetail = () => {
+interface CardDetailProps {
+  author : string;
+}
+
+
+const CardDetail = ({author} : CardDetailProps ) => {
   return (
     <div className={styles.detail}>
-      
+      {author}
     </div>
   )
 }

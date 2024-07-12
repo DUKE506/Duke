@@ -2,18 +2,23 @@ import Image from 'next/image'
 import MyImg from '../../../public/images/Duke.png'
 import styles from './Card.module.css'
 import CardDetail from './Components/CardDetail'
+import Link from 'next/link'
 
-const Card = ({Name, Created, Author} : {Name : string, Created : string, Author : string}) => {
+const Card = ({Id,Name, Created, Author} 
+    : {Id:number,Name : string, Created : string, Author : string}) => {
     return (
         <div className={styles.card}>
             <figure className={styles.figure}>
-                <CardDetail/>
+                <CardDetail author={Author} />
                 <Image
                     className={styles.img} 
-                    alt=''
+                    alt={`Image ${Id}`}
                     src={MyImg} 
-                    layout='responsive'
+                    fill
+                    objectFit='cover'
                     />
+                
+                
             </figure>
             <div className={styles.info}>
                 <span className={styles.card_title}>
