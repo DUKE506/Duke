@@ -1,0 +1,17 @@
+.main {
+    background-color: var(--color-main3);
+    color: var(--color-wh);
+
+    font-size: var(--size-s);
+    border: solid 1px #000000;
+    border-radius: 6px;
+    padding: var(--pad-half) var(--pad-main);
+    transition: all .3s;
+}
+
+
+.main:hover {
+    background-color: var(--color-wh);
+    color: var(--color-main3);
+
+}

@@ -1,0 +1,7 @@
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: inherit;
+    margin-bottom: var(--pad-main);
+}
