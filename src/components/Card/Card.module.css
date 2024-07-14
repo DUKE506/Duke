@@ -16,6 +16,8 @@
     position: relative;
     border-radius: 6px;
     overflow: hidden;
+
+    box-shadow: 0 0 15px 5px black;
 }
 
 

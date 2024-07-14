@@ -26,6 +26,6 @@
     align-items: center;
     justify-content: center;
     transition: opacity 0.5s;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.322);
     opacity: 0;
 }
