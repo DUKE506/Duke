@@ -1,42 +1,74 @@
+
+@keyframes YAppear{
+    from {
+          opacity: 0;
+          transform: translateY(-5%);
+      }
+  
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+
 .inputfield {
+   
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    gap: var(--pad-half);
+    gap: var(--pad-main);
 }
 
 .label{
-    font-size : var(--size-s);
+    font-size : var(--size-m);
     color: var(--color-main6);
-    transition: all .2s;
+    transition: all .3s;
 }
 
 .input{
     outline: none;
     border : none;
-    font-size: var(--size-s);
+    font-size: var(--size-m);
     color: var(--color-wh);
-
-    padding: var(--pad-three) var(--pad-half);
-    border-bottom: 2px solid var(--color-main6);
+    padding: var(--pad-m2) var(--pad-main);
 
     background-color: var(--color-main3);
 
-    transition: all .2s;
-    /* border-radius: 6px; */
+    transition: all .3s;
+    border-radius: 6px;
 }
 .input::placeholder{
-    color: var(--color-main6);
+    color: var(--color-main2);
+    
 }
+.input[type='date']{
+    position: relative;
+    font-size: var(--size-m);
+}
+.input[type='date']:not(:focus):not(:valid) {
+    color: var(--color-main2);
+    font-size: var(--size-m);
+
+}
+
 
 .input:focus{
     background-color: var(--color-main4);
-    border-bottom: 2px solid var(--color-main6);
+    color: black;
 }
-
 
 .inputfield:focus-within .label {
     color: rgb(253, 255, 244);
     text-shadow: 0px 0px 5px var(--color-main6);
 }
+/* .input[type='date']::before{
+    content: attr(data-placeholder);
+    width: 100%;
+} */
+/* .input[type='date']:focus::before,
+.input[type='date']:valid::before {
+    display: none;
+} */

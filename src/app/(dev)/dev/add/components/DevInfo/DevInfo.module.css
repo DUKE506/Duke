@@ -1,0 +1,27 @@
+
+@keyframes YAppear{
+    from {
+          opacity: 0;
+          transform: translateY(-5%);
+      }
+  
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+.devinfo{
+    animation: YAppear 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--pad-mw);
+
+    border: 2px solid var(--color-main4);
+    border-radius: 10px;
+    padding: var(--pad-mw);
+}

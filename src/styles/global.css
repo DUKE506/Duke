@@ -21,6 +21,7 @@
   */
   --pad-wide: 2rem;
   --pad-mw: 1.5rem;
+  --pad-m2: 1.25rem;
   --pad-main: 1rem;
   --pad-three: 0.75rem;
   --pad-half: 0.5rem;
@@ -230,6 +231,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+
 
 /* a:hover {
   text-decoration: underline;

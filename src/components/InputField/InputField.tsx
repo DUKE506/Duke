@@ -15,12 +15,23 @@ const InputField = ({label, type, placeholder,value, onChange}:InputFieldProps) 
     const OnHandleChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
         console.log(e.target.value)
     }
+
     return (
         <div className={styles.inputfield}>
             <label className={styles.label}>
                 {label}
             </label>
-            <input className={styles.input} placeholder={placeholder} onChange={OnHandleChange}/>
+            <input 
+                className={styles.input} 
+                data-placeholder={ type == 'date' ? placeholder : null }
+                type={type}
+                placeholder={placeholder}
+                onChange={OnHandleChange}
+                required
+                
+                aria-required="true"
+                value={value}
+                />
         </div>
     )
 }

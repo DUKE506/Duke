@@ -9,9 +9,9 @@ const AddDev = () => {
     const [value, setValue] = useState('');
     return (
         <div>
-            <div>
+            {/* <div>
                 dev 작성페이지
-            </div>
+            </div> */}
             <div>
                 <DevInfo />
             </div>
