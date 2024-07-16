@@ -31,26 +31,32 @@
 .input{
     outline: none;
     border : none;
-    font-size: var(--size-m);
+    font-size: var(--size-xs);
     color: var(--color-wh);
-    padding: var(--pad-m2) var(--pad-main);
+    padding: var(--pad-three) var(--pad-main);
 
     background-color: var(--color-main3);
 
     transition: all .3s;
     border-radius: 6px;
 }
+.label-small{
+    font-size: var(--size-xs);
+}
+
+
+
 .input::placeholder{
     color: var(--color-main2);
     
 }
 .input[type='date']{
     position: relative;
-    font-size: var(--size-m);
+    font-size: var(--size-xs);
 }
 .input[type='date']:not(:focus):not(:valid) {
     color: var(--color-main2);
-    font-size: var(--size-m);
+    font-size: var(--size-xs);
 
 }
 
