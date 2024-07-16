@@ -21,12 +21,18 @@
 
     gap: var(--pad-main);
 }
+.gap-half{
+    
+    gap : var(--pad-half);
+}
+
 
 .label{
     font-size : var(--size-m);
     color: var(--color-main6);
     transition: all .3s;
 }
+
 
 .input{
     outline: none;

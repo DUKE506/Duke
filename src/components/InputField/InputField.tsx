@@ -5,6 +5,7 @@ type valueType = string | number
 interface InputFieldProps {
     label? : string;
     labelSize? : string;
+    gap? : string;
     type? : string;
     placeholder? : string;
     value? : valueType;
@@ -12,13 +13,13 @@ interface InputFieldProps {
 
 }
 
-const InputField = ({label, labelSize,type, placeholder,value, onChange}:InputFieldProps) => {
+const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:InputFieldProps) => {
     const OnHandleChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
         console.log(e.target.value)
     }
 
     return (
-        <div className={styles.inputfield}>
+        <div className={`${styles.inputfield} ${gap ? styles[gap] : ''}`}>
             <label className={`${styles.label}  ${labelSize ? styles[labelSize] : ''}`}>
                 {label}
             </label>
