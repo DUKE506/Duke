@@ -3,7 +3,7 @@ import styles from './DevInfo.module.css'
 import Duration from "@/components/Duration/Duration";
 import Select from "@/components/SelectBox/Select";
 
-interface Dev {
+interface DevProps {
     title : string,
     explain : string,
     startDate : Date,
@@ -21,12 +21,12 @@ const DevInfo = () => {
         {label : "종료", value : "종료"},
     ]
 
+
+
     return(
         <div className={styles.devinfo}>
             <InputField label="Title" type="text" placeholder="Title"/>
             <InputField label="Explain" type="textarea" placeholder="Explain" />
-            {/* <InputField label="Duration" type="date" placeholder="YYYY MM DD"/>
-            <InputField label="Duration" type="date" placeholder="YYYY MM DD"/> */}
             <Duration label="Duration" subLabel1="Start" subLabel2="End"/>
             <Select label="Status" data={datas}/>
         </div>

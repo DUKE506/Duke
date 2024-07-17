@@ -21,7 +21,6 @@ const Duration = (
         </label>
         <div className={styles.inputs}>
             <InputField label={subLabel1} type='date' labelSize='label-small' gap="gap-half"/>
-            {/* <span> ~ </span> */}
             <InputField label={subLabel2} type='date' labelSize='label-small' gap="gap-half"/>
         </div>
     </div>
