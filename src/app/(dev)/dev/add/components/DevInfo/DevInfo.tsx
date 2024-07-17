@@ -15,9 +15,10 @@ interface Dev {
 
 const DevInfo = () => {
     const datas = [
+        {label : "Select", value : ""},
         {label : "예정", value : "예정"},
         {label : "진행중", value : "진행중"},
-        {label : "예정", value : "예정"},
+        {label : "종료", value : "종료"},
     ]
 
     return(
@@ -27,7 +28,7 @@ const DevInfo = () => {
             {/* <InputField label="Duration" type="date" placeholder="YYYY MM DD"/>
             <InputField label="Duration" type="date" placeholder="YYYY MM DD"/> */}
             <Duration label="Duration" subLabel1="Start" subLabel2="End"/>
-            <Select data={datas}/>
+            <Select label="Status" data={datas}/>
         </div>
     )
 }

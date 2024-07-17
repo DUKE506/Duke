@@ -23,7 +23,11 @@ const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:I
             <label className={`${styles.label}  ${labelSize ? styles[labelSize] : ''}`}>
                 {label}
             </label>
-            <input 
+            {
+                type == 'textarea' ? 
+                <textarea className={styles.textarea}/>
+                :
+                <input 
                 className={styles.input} 
                 data-placeholder={ type == 'date' ? placeholder : null }
                 type={type}
@@ -34,6 +38,8 @@ const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:I
                 aria-required="true"
                 value={value}
                 />
+            }
+            
         </div>
     )
 }
