@@ -84,6 +84,7 @@
     color: var(--color-wh);
     padding: var(--pad-three) var(--pad-main);
 
+    min-height: calc(var(--size-m)*7);
     resize: none;
 
     background-color: var(--color-main3);

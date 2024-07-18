@@ -12,21 +12,18 @@
   }
 
 .nav {
-    /* position : fixed; */
-    width: 30%;
+    display: block;
     animation: XAppear 0.7s;
     animation-fill-mode: forwards;
     animation-delay: 0.1s;
     padding: 1rem;
-    border-radius: 50px;
 
-    background-color: var(--back-nav-cr);
+    /* background-color: var(--back-nav-cr); */
     /* box-shadow: 0 0 15px -5px var(--back-nav-cr); */
 }
 
 .nav ul {
     display: flex;
-    justify-content: center;
     gap: var(--nav-pd);
 
 }
@@ -36,5 +33,45 @@
 }
 
 .nav li:hover {
+    color: rgb(253, 255, 244);
+    text-shadow: 0px 0px 5px var(--color-main6);
     transform: scale(1.2);
 }
+
+
+
+
+
+.nav li>a:before, .nav li>a:after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.nav li>a:before {
+  margin-right: 0.5rem;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.nav li>a:after {
+    margin-left: 0.5rem;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+
+
+.nav li>a:hover:before, .nav li>a:hover:after, .nav li>a:focus:before, .nav li>a:focus:after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  

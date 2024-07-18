@@ -2,18 +2,16 @@ import InputField from "@/components/InputField/InputField";
 import styles from './DevInfo.module.css'
 import Duration from "@/components/Duration/Duration";
 import Select from "@/components/SelectBox/Select";
+import { DevData } from "../../page";
 
-interface DevProps {
-    title : string,
-    explain : string,
-    startDate : Date,
-    endDate : Date,
+interface DevInfoProps {
+    dev : DevData
     // image
 }
 
 
 
-const DevInfo = () => {
+const DevInfo = ({dev}:DevInfoProps) => {
     const datas = [
         {label : "Select", value : ""},
         {label : "예정", value : "예정"},
@@ -26,9 +24,10 @@ const DevInfo = () => {
     return(
         <div className={styles.devinfo}>
             <InputField label="Title" type="text" placeholder="Title"/>
-            <InputField label="Explain" type="textarea" placeholder="Explain" />
+            
             <Duration label="Duration" subLabel1="Start" subLabel2="End"/>
             <Select label="Status" data={datas}/>
+            <InputField label="Explain" type="textarea" placeholder="Explain" />
         </div>
     )
 }
