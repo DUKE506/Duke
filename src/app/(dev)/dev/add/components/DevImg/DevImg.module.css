@@ -1,0 +1,14 @@
+.img_container{
+    width :100%;
+    white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid var(--color-main4);
+    border-radius: 10px;
+    padding: var(--pad-mw);
+
+
+}
+
