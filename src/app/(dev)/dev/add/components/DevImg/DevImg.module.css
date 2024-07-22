@@ -1,5 +1,8 @@
 .img_container{
+    display: flex;
+    gap: var(--pad-main);
     width :100%;
+    height: auto;
     white-space: nowrap;
 
     display: flex;
@@ -8,7 +11,7 @@
     border: 2px solid var(--color-main4);
     border-radius: 10px;
     padding: var(--pad-mw);
-
-
 }
+
+
 

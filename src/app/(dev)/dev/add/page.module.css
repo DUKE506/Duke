@@ -4,3 +4,9 @@
 
     gap : var(--pad-wide)
 }
+@media (max-width: 480px) {
+    .dev{
+        flex-direction: column;
+        align-items: unset;
+    }
+}

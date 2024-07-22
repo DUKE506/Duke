@@ -1,0 +1,49 @@
+
+.drag_box{
+    display: flex;
+    flex-direction: column;
+    gap:  var(--pad-main);
+
+    width: 100%;
+
+}
+
+.label{
+    font-size: var(--size-m);
+    color: var(--color-main6);
+    transition: all .3s;
+}
+
+.active{
+    color: #fdfff4;
+    text-shadow: 0px 0px 5px var(--color-main6);
+}
+
+
+.drop_area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+
+    font-size: var(--size-s);
+    color: var(--color-main4);
+
+    border: 2px dashed var(--color-main5);
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+/* .drop_area:hover{
+    border: 2px dashed var(--color-main6);
+    box-shadow: 0px 0px 5px var(--color-main6);
+} */
+
+.over{
+    
+}
+
+.hidden{
+    display: none;
+}
