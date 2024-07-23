@@ -27,7 +27,6 @@ const Select = ({label, data}:SelectProps) => {
     const onSelectValue = (label : string) => {
         setDisplay(label)
         setIsShow(!isShow);
-        console.log(label);
     }
 
     const onShow = () => {
@@ -46,7 +45,6 @@ const Select = ({label, data}:SelectProps) => {
                 <ul className={`${styles.options} ${isShow ? styles['show'] : ''}`}>
                     {
                         data.map((option, idx)=>{
-                            console.log(option.value == '')
                             return(
                                 <li className={`${styles.item} `} key={`${idx}-${option.value}`} value={option.value} onClick={()=>onSelectValue(option.label)}>
                                     {option.label}

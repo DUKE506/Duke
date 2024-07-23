@@ -6,21 +6,25 @@ interface DragProps {
     onChangeFiles : (file : File[]) => void;
     description : string;
     type? : 'image' | 'all';
+    maxAmount : number //파일 수
 }
 // {onChangeFile, description} : DragProps
-const DragBox = ({title, description, type, onChangeFiles} : DragProps) => {
+const DragBox = ({title, description, type, maxAmount, onChangeFiles} : DragProps) => {
     //드래그 상태 관리
     const [dragOver, setDragOver] = useState<boolean>(false);
 
 
-    const fileTypes = (file: File):boolean => {
-        if(type === 'all') return true;
-
+    const fileTypes = (files: Array<File>):File[] => {
+        if(type === 'all') return files;
         const acceptExtensions = ['jpg','jpeg', 'png','gif' ];
         const acceptMimeTypes = ['image/jpg','image/jpeg','image/png','image/gif']
-        const fileExtension = file.name.split('.').pop()?.toLowerCase() || '';
-
-        return acceptExtensions.includes(fileExtension) && acceptMimeTypes.includes(file.type);
+        // const fileExtension = file.name.split('.').pop()?.toLowerCase() || '';
+        // return acceptExtensions.includes(fileExtension) && acceptMimeTypes.includes(file.type)
+        
+        return files.filter(file => {
+            const fileExtension = file.name.split('.').pop()?.toLowerCase() || '';
+            return acceptExtensions.includes(fileExtension) && acceptMimeTypes.includes(file.type)
+        })
     }
 
     //마우스가 목표 영역에 진입
@@ -41,15 +45,14 @@ const DragBox = ({title, description, type, onChangeFiles} : DragProps) => {
     //마우스가 목표 영역에 드롭
     const onDragDrop = (e : React.DragEvent<HTMLLabelElement>) =>{
         e.preventDefault();
-    
         console.log("onDragDrop")
+        console.log(e.dataTransfer.files.length)
+        const dropedFiles = Array.from(e.dataTransfer.files);
 
-        console.log(e.dataTransfer)
-        const files = Array.from(e.dataTransfer.files);
-        onChangeFiles(files)
-        files.forEach(e => {
-            console.log(e.name)
-        });
+        let filterFiles = fileTypes(dropedFiles);
+
+
+        onChangeFiles(filterFiles)
         setDragOver(false);
     }
 
@@ -63,8 +66,11 @@ const DragBox = ({title, description, type, onChangeFiles} : DragProps) => {
 
     const onChangeFile = (e : ChangeEvent<HTMLInputElement>) => {
         if(e.target.files !== null){
-            let files = Array.from(e.target.files);
-            onChangeFiles(files)
+            let droppedFiles = Array.from(e.target.files);
+            const validationFiles = fileTypes(droppedFiles);
+            const FilteredFiles= limitAmount(validationFiles)
+
+            onChangeFiles(FilteredFiles)
         }
     }
 
@@ -72,14 +78,24 @@ const DragBox = ({title, description, type, onChangeFiles} : DragProps) => {
         return type === 'image' ? "image/*" : "*/*";
     }
 
+    //최대 파일 수 제한 함수
+    const limitAmount = (files : File[] ):File[] => {
+        if(files.length > maxAmount){
+            return files.slice(0,maxAmount);
+        }
+        return files;
+    }
+
+
+
 
     return(
         <div className={`${styles.drag_box}`}>
-            <span className={`${styles.label} ${dragOver ? styles.span_active : ''}`}>
+            <span className={`${styles.label} ${dragOver ? styles['span_active'] : ''}`}>
                 {title}
             </span>
             <label 
-                className={`${styles.drop_area} ${dragOver ? styles.area_active : ''}`}
+                className={`${styles.drop_area} ${dragOver ? styles['area_active'] : ''}`}
                 onDragEnter={onDragEnter} 
                 onDragOver={onDragOver} 
                 onDrop={onDragDrop} 

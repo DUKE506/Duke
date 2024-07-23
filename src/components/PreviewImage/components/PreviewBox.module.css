@@ -1,0 +1,55 @@
+.preview_box{
+    position: relative;
+    min-width: 250px;
+    min-height: 150px;
+
+    border : 2px solid var(--color-main3);
+    border-radius: 10px;
+    box-shadow: 0 0 15px -5px #fdfff4;
+}
+
+.preview_box .btn{
+    position: absolute;
+    top: -9%;
+    right: -5%;
+
+    width: 25px;
+    height: 25px;
+    outline: none;
+
+    border: 2px solid var(--color-main1);
+    border-radius: 50%;
+    background-color: var(--color-main5);
+    transition:  all .3s;
+}
+
+.preview_box .btn:hover{
+    background-color: var(--color-wh);
+    cursor: pointer;
+}
+
+.preview_box .btn::before,
+.preview_box .btn::after
+{
+    content: '';
+    position: absolute;
+    top: 50%;  /* 추가 */
+    left: 50%; 
+    width: 14px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--color-main1);
+}
+
+.preview_box .btn::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.preview_box .btn::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.preview_box .img{
+    z-index: -1;
+    border-radius: 10px;
+}

@@ -5,6 +5,7 @@ import { useState } from "react";
 import styles from "./page.module.css"
 import DevInfo from "./components/DevInfo/DevInfo";
 import DevImg from "./components/DevImg/DevImg";
+import Button from "@/components/Button/Button";
 
 
 export interface DevData{
@@ -27,9 +28,13 @@ const AddDev = () => {
     })
     return (
         <div className={styles.dev}>
-            
-            <DevInfo dev={dev} />
-            <DevImg />
+            <div className={styles.wrap}>
+                <DevInfo dev={dev} />
+                <DevImg />
+            </div>
+            <div>
+                <Button name="Add" color="main" />
+            </div>
         </div>
     )
 }

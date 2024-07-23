@@ -29,6 +29,9 @@
   --color-main5: #adb5db;
   --color-main6: #ced4da;
   --color-wh: #ffffff;
+
+  --color-focus-wh : #fdfff4;
+
   --back-sub-cr: #ffffff;
   --back-nav-cr: #343a40;
 
@@ -203,6 +206,13 @@ table {
 
 section {
   display: block;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 body {

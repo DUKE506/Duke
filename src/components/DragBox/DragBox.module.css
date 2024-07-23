@@ -14,10 +14,13 @@
     transition: all .3s;
 }
 
-.active{
+.span_active{
     color: #fdfff4;
     text-shadow: 0px 0px 5px var(--color-main6);
+
 }
+
+
 
 
 .drop_area{
@@ -30,15 +33,20 @@
     font-size: var(--size-s);
     color: var(--color-main4);
 
-    border: 2px dashed var(--color-main5);
+    border: 2px dashed var(--color-main3);
     border-radius: 10px;
     transition: all .3s;
 }
+.drop_area:hover{
+    cursor: pointer;
+}
 
-/* .drop_area:hover{
-    border: 2px dashed var(--color-main6);
-    box-shadow: 0px 0px 5px var(--color-main6);
-} */
+.drop_area:hover,
+.area_active{
+    color: #fdfff4;
+    text-shadow: 0px 0px 5px var(--color-main6);
+    border: 2px dashed #fdfff4;
+}
 
 .over{
     

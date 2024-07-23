@@ -1,4 +1,6 @@
 .img_container{
+    animation: var(--ani-yappear);
+    animation-fill-mode: forwards;
     display: flex;
     gap: var(--pad-main);
     width :100%;

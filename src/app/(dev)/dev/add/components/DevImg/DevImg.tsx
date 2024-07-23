@@ -26,6 +26,7 @@ const DevImg = () =>{
                     description='대표이미지를 등록해주세요.'
                     type='image'
                     onChangeFiles={onAddFiles}
+                    maxAmount={3}
                     />
                 <PreviewImage files={files}/>
         </div>

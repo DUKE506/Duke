@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import styles from './PreviewImage.module.css'
+import PreviewBox from './components/PreviewBox';
 
 interface PreviewProps{
     files : File[] | null;
@@ -19,18 +20,21 @@ const PreviewImage = ({files} :  PreviewProps) => {
         
     },[files])
 
+    const onDelete = ( id :number) => {
+        console.log(id)
+    }
+
     return(
         <div>
             <ul className= {styles.prev_container}>
                 {
                     previews?.map((img, idx)=>{
                         return(
-                            <li>
-                                <Image 
-                                src={img}
-                                alt='aaa'
-                                width={250}
-                                height={150}
+                            <li key={`image-${ImageBitmapRenderingContext}`}>
+                                <PreviewBox 
+                                idx={idx}
+                                image={img} 
+                                onClick={onDelete}
                                 />
                             </li>
                         )
