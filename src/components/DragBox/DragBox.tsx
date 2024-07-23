@@ -18,8 +18,6 @@ const DragBox = ({title, description, type, maxAmount, onChangeFiles} : DragProp
         if(type === 'all') return files;
         const acceptExtensions = ['jpg','jpeg', 'png','gif' ];
         const acceptMimeTypes = ['image/jpg','image/jpeg','image/png','image/gif']
-        // const fileExtension = file.name.split('.').pop()?.toLowerCase() || '';
-        // return acceptExtensions.includes(fileExtension) && acceptMimeTypes.includes(file.type)
         
         return files.filter(file => {
             const fileExtension = file.name.split('.').pop()?.toLowerCase() || '';

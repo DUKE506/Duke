@@ -12,12 +12,11 @@ const PreviewImage = ({files} :  PreviewProps) => {
     const [previews, setPreview] = useState<string[]>([]);
 
     useEffect(()=>{
-
         if( files && files?.length > 0){
             const convertPreview = files?.map((file, idx)=> URL.createObjectURL(file));
             setPreview(prev => [...prev, ...convertPreview]);
         }
-        
+        console.log(files)
     },[files])
 
     const onDelete = ( id :number) => {
@@ -25,7 +24,7 @@ const PreviewImage = ({files} :  PreviewProps) => {
     }
 
     return(
-        <div>
+        <div className={`${files?.length === 0 ? styles['none'] : ''}`}>
             <ul className= {styles.prev_container}>
                 {
                     previews?.map((img, idx)=>{
