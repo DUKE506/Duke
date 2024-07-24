@@ -249,7 +249,7 @@ body {
 }
 
 .inner {
-  inline-size: min(100% - 35px* 2, 1820px);
+  inline-size: min(100% - 200px* 2, 1820px);
   margin-inline: auto;
 }
 

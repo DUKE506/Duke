@@ -58,7 +58,7 @@ export default function HomePage() {
                 {
                     CardList.map((card, idx) => {
                         return (
-                            <li className={styles.li}>
+                            <li className={styles.li} key={`${card.Name}-${idx}`}>
                                 <Card
                                     key={idx}
                                     Id={card.Id}

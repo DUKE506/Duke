@@ -10,7 +10,7 @@ const Dashboard = () => {
             </div>
             <div className={styles.title}>
                 <span>
-                    Welcome Duke's Site
+                    Welcome Dukes Site
                 </span>
             </div>
         </div>

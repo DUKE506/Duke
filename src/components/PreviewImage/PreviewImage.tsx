@@ -4,35 +4,38 @@ import styles from './PreviewImage.module.css'
 import PreviewBox from './components/PreviewBox';
 
 interface PreviewProps{
-    files : File[] | null;
+    files : File[];
+    onRemove : (idx:number) => void;
 }
 
 
-const PreviewImage = ({files} :  PreviewProps) => {
-    const [previews, setPreview] = useState<string[]>([]);
+const PreviewImage = ({files, onRemove} :  PreviewProps) => {
+    //const [previews, setPreview] = useState<string[]>([]);
+    
 
     useEffect(()=>{
-        if( files && files?.length > 0){
-            const convertPreview = files?.map((file, idx)=> URL.createObjectURL(file));
-            setPreview(prev => [...prev, ...convertPreview]);
-        }
-        console.log(files)
+        console.log('미리보기 시작')
+        files.forEach(e => console.log(e.name))
+        console.log('미리보기 끝')
+
+
     },[files])
 
     const onDelete = ( id :number) => {
-        console.log(id)
+        onRemove(id);
     }
 
     return(
         <div className={`${files?.length === 0 ? styles['none'] : ''}`}>
             <ul className= {styles.prev_container}>
                 {
-                    previews?.map((img, idx)=>{
+                    files?.map((file, idx)=>{
+                        const imageUrl = URL.createObjectURL(file)
                         return(
-                            <li key={`image-${ImageBitmapRenderingContext}`}>
+                            <li key={`image-${idx}`}>
                                 <PreviewBox 
                                 idx={idx}
-                                image={img} 
+                                image={imageUrl} 
                                 onClick={onDelete}
                                 />
                             </li>
