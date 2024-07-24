@@ -11,7 +11,7 @@
     gap : var(--pad-wide)
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .wrap{
         flex-direction: column;
         align-items: unset;
