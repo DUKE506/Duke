@@ -1,6 +1,4 @@
 'use client'
-
-
 import { useState } from "react";
 import styles from "./page.module.css"
 import DevInfo from "./components/DevInfo/DevInfo";
@@ -15,8 +13,6 @@ export interface DevData{
     endDate? : Date | null;
     status?:string;
 }
-
-
 
 const AddDev = () => {
     const [dev, setDev] = useState<DevData>({

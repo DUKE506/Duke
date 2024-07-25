@@ -253,6 +253,17 @@ body {
   margin-inline: auto;
 }
 
+@media (max-width: 1280px) {
+  .inner  {
+      inline-size: min(100% - 50px* 2, 1820px);
+  }
+}
+
+@media (max-width: 480px) {
+  .inner  {
+      inline-size: min(100% - 20px* 2, 1820px);
+  }
+}
 
 a {
   color: inherit;

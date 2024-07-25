@@ -23,7 +23,7 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 1280px) {
     .duration .inputs {
         flex-direction: column;
         align-items: unset;
