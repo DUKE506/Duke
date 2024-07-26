@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InputField from '../InputField/InputField';
 import styles from './Duration.module.css'
 
@@ -13,7 +13,13 @@ interface DurationProps {
 const Duration = (
     {label, subLabel1, subLabel2, value1, value2}
     :DurationProps
-) => {
+    ) => {
+        
+    const [startAt, setStartAt] = useState<Date>();
+    const [endAt, setEmdAt] = useState<Date>();
+
+    
+
   return (
     <div className={styles.duration}>
         <label className={styles.label}>

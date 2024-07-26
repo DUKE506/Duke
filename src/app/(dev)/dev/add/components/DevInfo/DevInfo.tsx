@@ -6,28 +6,43 @@ import { DevData } from "../../page";
 
 interface DevInfoProps {
     dev : DevData
+    onDevChange : (filed : keyof DevData, value : any) => void;
     // image
 }
 
 
 
-const DevInfo = ({dev}:DevInfoProps) => {
+const DevInfo = ({dev,onDevChange}:DevInfoProps) => {
     const datas = [
         {label : "Select", value : ""},
-        {label : "예정", value : "예정"},
-        {label : "진행중", value : "진행중"},
-        {label : "종료", value : "종료"},
+        {label : "예정", value : "Scheduled"},
+        {label : "진행중", value : "Running"},
+        {label : "중단", value : "Stopped"},
+        {label : "종료", value : "Done"},
     ]
 
+    
 
 
     return(
         <div className={styles.devinfo}>
-            <InputField label="Title" type="text" placeholder="Title"/>
-            
-            <Duration label="Duration" subLabel1="Start" subLabel2="End"/>
+            <InputField 
+                label="Title" 
+                type="text" 
+                placeholder="Title"
+                onChange={(value)=>onDevChange('title', value)}
+                />
+            <Duration 
+            label="Duration" 
+            subLabel1="Start" 
+            subLabel2="End"/>
             <Select label="Status" data={datas}/>
-            <InputField label="Explain" type="textarea" placeholder="Explain" />
+            <InputField 
+                label="Explain" 
+                type="textarea" 
+                placeholder="Explain" 
+                onChange={(value)=>onDevChange('explain', value)}
+                />
         </div>
     )
 }

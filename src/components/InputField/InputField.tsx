@@ -9,13 +9,14 @@ interface InputFieldProps {
     type? : string;
     placeholder? : string;
     value? : valueType;
-    onChange? : (value : valueType)=> void;
+    onChange?: (value: string) => void;
 
 }
 
 const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:InputFieldProps) => {
-    const OnHandleChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
-        console.log(e.target.value)
+
+    const OnHandleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) =>{
+        onChange && onChange(e.target.value);
     }
 
     return (
@@ -25,7 +26,11 @@ const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:I
             </label>
             {
                 type == 'textarea' ? 
-                <textarea className={styles.textarea}/>
+                <textarea 
+                className={styles.textarea} 
+                placeholder={placeholder}
+                value={value}
+                onChange={OnHandleChange}/>
                 :
                 <input 
                 className={styles.input} 

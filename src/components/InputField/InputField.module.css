@@ -97,3 +97,8 @@
     background-color: var(--color-main4);
     color: black;
 }
+
+.textarea::placeholder{
+    color: var(--color-main2);
+    
+}
