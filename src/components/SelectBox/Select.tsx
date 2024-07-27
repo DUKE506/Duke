@@ -8,32 +8,36 @@ import styles from './Select.module.css'
  */
 
 
-interface SelectOption{
-    value : string | number;
-    label : string;
+interface SelectOption {
+    value: string | number;
+    label: string;
 }
 
-interface SelectProps{
-    label? : string;
+interface SelectProps {
+    label?: string;
+    name?: string;
     data: SelectOption[];
+    onChange?: (key: string, value: string) => void;
 }
 
 
 
-const Select = ({label, data}:SelectProps) => {
+const Select = ({ label, data, onChange, name = '' }: SelectProps) => {
     const [display, setDisplay] = useState('Select');
     const [isShow, setIsShow] = useState(false);
 
-    const onSelectValue = (label : string) => {
+    const onSelectValue = (label: string) => {
         setDisplay(label)
         setIsShow(!isShow);
+        onChange && onChange(name, display);
     }
 
     const onShow = () => {
         setIsShow(!isShow);
     }
 
-    return(
+
+    return (
         <div className={styles.select}>
             <label className={`${styles.label} ${isShow ? styles['label_focus'] : ''}`}>
                 {label}
@@ -44,9 +48,9 @@ const Select = ({label, data}:SelectProps) => {
                 </label>
                 <ul className={`${styles.options} ${isShow ? styles['show'] : ''}`}>
                     {
-                        data.map((option, idx)=>{
-                            return(
-                                <li className={`${styles.item} `} key={`${idx}-${option.value}`} value={option.value} onClick={()=>onSelectValue(option.label)}>
+                        data.map((option, idx) => {
+                            return (
+                                <li className={`${styles.item} `} key={`${idx}-${option.value}`} value={option.value} onClick={() => onSelectValue(option.label)}>
                                     {option.label}
                                 </li>
                             )

@@ -6,27 +6,28 @@ import DevImg from "./components/DevImg/DevImg";
 import Button from "@/components/Button/Button";
 import { ProjectStatus } from "@prisma/client";
 
-export interface DevData{
-    title? : string;
-    explain? : string;
-    startAt? : Date | null;
-    endAt? : Date | null;
-    status?:ProjectStatus | null;
+export interface DevData {
+    title?: string;
+    explain?: string;
+    startAt?: Date | null;
+    endAt?: Date | null;
+    status?: ProjectStatus | null;
 }
 
 const AddDev = () => {
     const [dev, setDev] = useState<DevData>({
-        title : '',
-        explain : '',
-        startAt : null,
-        endAt : null,
+        title: '',
+        explain: '',
+        startAt: null,
+        endAt: null,
         status: null
     })
 
-    const handleDevChange = (filed: keyof DevData, value : any) => {
+    const handleDevChange = (filed: keyof DevData, value: any) => {
+        console.log("change 함수 : ", value)
         setDev(prevDev => ({
             ...prevDev,
-            [filed] : value
+            [filed]: value
         }))
     }
 
@@ -35,20 +36,20 @@ const AddDev = () => {
     const handleCreate = async () => {
         try {
             console.log('handleCreate 들어옴')
-            const res = await fetch('/api/dev/add',{
-                method : 'POST',
-                headers : {
-                    'Content-Type' : 'application/json',
+            const res = await fetch('/api/dev/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                body : JSON.stringify(dev),
+                body: JSON.stringify(dev),
             });
 
-            if(!res.ok){
+            if (!res.ok) {
                 throw new Error('프로젝트 생성 실패');
             }
             const result = await res.json();
             console.log('결과 : ', result);
-            
+
         } catch (error) {
             console.error("[Error][Client][dev] 프로젝트 생성 에러!!" + error)
         }
@@ -57,13 +58,13 @@ const AddDev = () => {
     return (
         <div className={styles.dev}>
             <div className={styles.wrap}>
-                <DevInfo 
+                <DevInfo
                     dev={dev}
-                    onDevChange={handleDevChange} />
+                    onDevChange={(key, value) => handleDevChange(key as keyof DevData, value)} />
                 <DevImg />
             </div>
             <div>
-                <Button name="Add" color="main" onClick={handleCreate}/>
+                <Button name="Add" color="main" onClick={handleCreate} />
             </div>
         </div>
     )

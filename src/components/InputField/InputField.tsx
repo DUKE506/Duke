@@ -1,22 +1,25 @@
 import styles from './InputField.module.css'
 
-type valueType = string | number 
+type valueType = string | number
 
 interface InputFieldProps {
-    label? : string;
-    labelSize? : string;
-    gap? : string;
-    type? : string;
-    placeholder? : string;
-    value? : valueType;
-    onChange?: (value: string) => void;
-
+    label?: string;
+    labelSize?: string;
+    gap?: string;
+    type?: string;
+    placeholder?: string;
+    value?: valueType;
+    // onChange?: (value: string) => void;
+    onChange?: (key: string, value: string | Date | null,) => void;
 }
 
-const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:InputFieldProps) => {
+const InputField = ({ label, labelSize, gap, type, placeholder, value, onChange }: InputFieldProps) => {
 
-    const OnHandleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) =>{
-        onChange && onChange(e.target.value);
+    //핸들러에 키, 값 전달
+    const OnHandleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        console.log(e.target.name)
+        console.log(e.target.value)
+        onChange && onChange(e.target.name, e.target.value);
     }
 
     return (
@@ -25,26 +28,28 @@ const InputField = ({label, labelSize, gap, type, placeholder,value, onChange}:I
                 {label}
             </label>
             {
-                type == 'textarea' ? 
-                <textarea 
-                className={styles.textarea} 
-                placeholder={placeholder}
-                value={value}
-                onChange={OnHandleChange}/>
-                :
-                <input 
-                className={styles.input} 
-                data-placeholder={ type == 'date' ? placeholder : null }
-                type={type}
-                placeholder={placeholder}
-                onChange={OnHandleChange}
-                required
-                
-                aria-required="true"
-                value={value}
-                />
+                type == 'textarea' ?
+                    <textarea
+                        className={styles.textarea}
+                        name={placeholder}
+                        placeholder={placeholder}
+                        // value={value}
+                        onChange={OnHandleChange} />
+                    :
+                    <input
+                        className={styles.input}
+                        name={placeholder}
+                        data-placeholder={type == 'date' ? placeholder : null}
+                        type={type}
+                        placeholder={placeholder}
+                        onChange={OnHandleChange}
+                        required
+
+                        aria-required="true"
+                    // value={value}
+                    />
             }
-            
+
         </div>
     )
 }
