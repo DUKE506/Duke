@@ -31,7 +31,8 @@ const DevInfo = ({ dev, onDevChange }: DevInfoProps) => {
             <InputField
                 label="Title"
                 type="text"
-                placeholder="title"
+                name="title"
+                placeholder="Title"
                 onChange={(key, value) => onDevChange(key as keyof DevData, value)}
             />
             <Duration
@@ -40,11 +41,17 @@ const DevInfo = ({ dev, onDevChange }: DevInfoProps) => {
                 subLabel2="End"
                 onChange={(key, value) => onDevChange(key as keyof DevData, value)}
             />
-            <Select label="Status" data={datas} />
+            <Select 
+            label="Status" 
+            data={datas} 
+            name='status'
+            onChange={(key : string, value : string) => onDevChange(key as keyof DevData, value)}
+            />
             <InputField
                 label="Explain"
                 type="textarea"
-                placeholder="explain"
+                name="explain"
+                placeholder="Explain"
                 onChange={(key, value) => onDevChange(key as keyof DevData, value)}
             />
         </div>

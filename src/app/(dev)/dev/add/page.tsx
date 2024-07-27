@@ -24,7 +24,7 @@ const AddDev = () => {
     })
 
     const handleDevChange = (filed: keyof DevData, value: any) => {
-        console.log("change 함수 : ", value)
+        console.log("change 함수 : ", filed)
         setDev(prevDev => ({
             ...prevDev,
             [filed]: value

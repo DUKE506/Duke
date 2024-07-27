@@ -9,7 +9,7 @@ import styles from './Select.module.css'
 
 
 interface SelectOption {
-    value: string | number;
+    value: string;
     label: string;
 }
 
@@ -22,14 +22,14 @@ interface SelectProps {
 
 
 
-const Select = ({ label, data, onChange, name = '' }: SelectProps) => {
+const Select = ({ label, data, onChange, name='' }: SelectProps) => {
     const [display, setDisplay] = useState('Select');
     const [isShow, setIsShow] = useState(false);
 
-    const onSelectValue = (label: string) => {
-        setDisplay(label)
+    const onSelectValue = (option: SelectOption) => {
+        setDisplay(option.label)
         setIsShow(!isShow);
-        onChange && onChange(name, display);
+        onChange && onChange(name, option.value);
     }
 
     const onShow = () => {
@@ -50,7 +50,7 @@ const Select = ({ label, data, onChange, name = '' }: SelectProps) => {
                     {
                         data.map((option, idx) => {
                             return (
-                                <li className={`${styles.item} `} key={`${idx}-${option.value}`} value={option.value} onClick={() => onSelectValue(option.label)}>
+                                <li className={`${styles.item} `} key={`${idx}-${option.value}`} value={option.value} onClick={() => onSelectValue(option)}>
                                     {option.label}
                                 </li>
                             )

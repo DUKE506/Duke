@@ -9,11 +9,12 @@ interface InputFieldProps {
     type?: string;
     placeholder?: string;
     value?: valueType;
+    name? : string;
     // onChange?: (value: string) => void;
     onChange?: (key: string, value: string | Date | null,) => void;
 }
 
-const InputField = ({ label, labelSize, gap, type, placeholder, value, onChange }: InputFieldProps) => {
+const InputField = ({ label, labelSize, gap, type, placeholder, value, name, onChange }: InputFieldProps) => {
 
     //핸들러에 키, 값 전달
     const OnHandleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,14 +32,14 @@ const InputField = ({ label, labelSize, gap, type, placeholder, value, onChange 
                 type == 'textarea' ?
                     <textarea
                         className={styles.textarea}
-                        name={placeholder}
+                        name={name}
                         placeholder={placeholder}
                         // value={value}
                         onChange={OnHandleChange} />
                     :
                     <input
                         className={styles.input}
-                        name={placeholder}
+                        name={name}
                         data-placeholder={type == 'date' ? placeholder : null}
                         type={type}
                         placeholder={placeholder}

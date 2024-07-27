@@ -30,7 +30,7 @@ const Duration = (
                 <InputField
                     label={subLabel1}
                     type='date'
-                    placeholder='startAt'
+                    name='startAt'
                     labelSize='label-small'
                     gap="gap-half"
                     onChange={(key, value) => onChange(key, value)}
@@ -38,7 +38,7 @@ const Duration = (
                 <InputField
                     label={subLabel2}
                     type='date'
-                    placeholder='endAt'
+                    name='endAt'
                     labelSize='label-small'
                     gap="gap-half"
                     onChange={(key, value) => onChange(key, value)}
