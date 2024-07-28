@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react";
 import styles from "./page.module.css"
-import DevInfo from "./components/DevInfo/DevInfo";
-import DevImg from "./components/DevImg/DevImg";
+import ProjectInfo from "./components/ProjectInfo/ProjectInfo";
+import ProjectImg from "./components/ProjectImg/ProjectImg";
 import Button from "@/components/Button/Button";
 import { ProjectStatus } from "@prisma/client";
 
-export interface DevData {
+export interface ProjectData {
     title?: string;
     explain?: string;
     startAt?: Date | null;
@@ -15,7 +15,7 @@ export interface DevData {
 }
 
 const AddDev = () => {
-    const [dev, setDev] = useState<DevData>({
+    const [dev, setDev] = useState<ProjectData>({
         title: '',
         explain: '',
         startAt: null,
@@ -23,7 +23,7 @@ const AddDev = () => {
         status: null
     })
 
-    const handleDevChange = (filed: keyof DevData, value: any) => {
+    const handleDevChange = (filed: keyof ProjectData, value: any) => {
         console.log("change 함수 : ", filed)
         setDev(prevDev => ({
             ...prevDev,
@@ -58,10 +58,10 @@ const AddDev = () => {
     return (
         <div className={styles.dev}>
             <div className={styles.wrap}>
-                <DevInfo
+                <ProjectInfo
                     dev={dev}
-                    onDevChange={(key, value) => handleDevChange(key as keyof DevData, value)} />
-                <DevImg />
+                    onDevChange={(key, value) => handleDevChange(key as keyof ProjectData, value)} />
+                <ProjectImg />
             </div>
             <div>
                 <Button name="Add" color="main" onClick={handleCreate} />

@@ -8,7 +8,7 @@ const Filter = () => {
     const router = useRouter();
 
     const onMoveAdd = () => {
-        router.push('dev/add')
+        router.push('project/add')
     }
 
     return (

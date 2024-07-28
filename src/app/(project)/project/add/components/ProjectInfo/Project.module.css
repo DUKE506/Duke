@@ -1,6 +1,4 @@
-
-
-.devinfo{
+.projectinfo {
     animation: var(--ani-yappear);
     animation-fill-mode: forwards;
     /* animation-delay: 0.1s; */
