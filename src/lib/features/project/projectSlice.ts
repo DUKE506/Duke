@@ -1,5 +1,5 @@
 import { ProjectStatus } from "@prisma/client";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 export interface IProject{
@@ -35,6 +35,12 @@ const projectSlice = createSlice({
     name : 'project',
     initialState,
     reducers : {
-        
+        updateCurrentProject : (state, action : PayloadAction<Partial<IProject>>) =>{
+            state.currentProject = { ...state.currentProject, ...action.payload };
+        }
     }
 })
+
+
+export const { updateCurrentProject } = projectSlice.actions;
+export default projectSlice.reducer;
