@@ -6,6 +6,9 @@ const Navigation = async () => {
         <nav className={styles.nav}>
             <ul>
                 <li>
+                    <Link href='/'>Home</Link>
+                </li>
+                <li>
                     <Link href='/career'>Career</Link>
                 </li>
                 <li>

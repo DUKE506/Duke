@@ -1,6 +1,8 @@
+
 import Card from '@/components/Card/Card'
 import styles from './page.module.css'
 import Filter from './components/filter/filter'
+import { useEffect, useState } from 'react'
 
 
 
@@ -58,7 +60,10 @@ export default function HomePage() {
                 {
                     CardList.map((card, idx) => {
                         return (
-                            <li className={styles.li} key={`${card.Name}-${idx}`}>
+                            <li 
+                                className={`${styles.li}`} 
+                                key={`${card.Name}-${idx}`}
+                                >
                                 <Card
                                     key={idx}
                                     Id={card.Id}
