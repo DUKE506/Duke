@@ -1,19 +1,10 @@
 import { ProjectStatus } from "@prisma/client";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-
-export interface IProject{
-    id? : string;
-    title? : string;
-    explain? : string;
-    startAt : Date | null;
-    endAt : Date | null; 
-    status : ProjectStatus | null;
-}
+import { project } from "@/types/project/types";
 
 interface ProjectState {
-    currentProject : IProject;
-    projectList : IProject[];
+    currentProject : project;
+    projectList : project[];
     loading : boolean;
     error : string | null;
 }
@@ -36,7 +27,7 @@ const projectSlice = createSlice({
     initialState, //초기 상태
     //리듀서 정의
     reducers : {
-        updateCurrentProject : (state, action : PayloadAction<Partial<IProject>>) =>{
+        updateCurrentProject : (state, action : PayloadAction<Partial<project>>) =>{
             state.currentProject = { ...state.currentProject, ...action.payload };
         }
     },

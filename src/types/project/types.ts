@@ -1,7 +1,7 @@
 import { ProjectStatus } from "@prisma/client";
 
 
-export interface DevData {
+export interface project {
     title?: string;
     explain?: string;
     startAt?: Date | null;
